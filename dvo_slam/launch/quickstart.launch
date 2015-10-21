@@ -1,9 +1,10 @@
 <launch>
   <arg name="debug" default="false" />
-  
+  <include file="$(find openni2_launch)/launch/openni2.launch">
+    </include>
   <arg name="launch_prefix" value="xterm -e gdb --args" if="$(arg debug)" />
   <arg name="launch_prefix" value="" unless="$(arg debug)" />
-
+    
   <!-- camera_tracker to camera_keyframe_tracker  /-->
   <node launch-prefix="$(arg launch_prefix)" pkg="dvo_slam" type="camera_keyframe_tracker" name="camera_keyframe_tracker" output="screen">
     <remap from="camera/rgb/image_rect" to="camera/rgb/image_rect_color" />
