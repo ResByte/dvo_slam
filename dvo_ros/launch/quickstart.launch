@@ -1,6 +1,7 @@
 <launch>
   <arg name="debug" default="false" />
-  
+   <include file="$(find openni2_launch)/launch/openni2.launch">
+    </include>
   <arg name="launch_prefix" value="xterm -e gdb --args" if="$(arg debug)" />
   <arg name="launch_prefix" value="" unless="$(arg debug)" />
   
