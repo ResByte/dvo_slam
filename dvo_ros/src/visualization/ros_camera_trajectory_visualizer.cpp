@@ -191,7 +191,7 @@ private:
     createCameraMarker(control);
 
     marker.name = name_;
-    marker.header.frame_id = "/world";
+    marker.header.frame_id = "world";
     marker.controls.push_back(control);
   }
 
